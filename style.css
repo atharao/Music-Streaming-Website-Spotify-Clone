@@ -24,6 +24,7 @@ nav ul{
 
 nav ul li{
     padding: 0 12px;
+    font-weight: bold;
 }
 .brand img{
     width: 44px;
@@ -33,7 +34,6 @@ nav ul li{
 .brand {
     display: flex;
     align-items: center;
-    font-weight: bolder;
     font-size: 1.3rem;
 }
 
@@ -63,11 +63,13 @@ nav ul li{
 }
 
 .icons{
-    margin-top: 14px; 
+    margin-top: 14px;
+    cursor: pointer; 
 }
-.icons i{
-    cursor: pointer;
-}
+
+.icons i:active {
+    transform: scale(1.1);
+  }
 
 #myProgressBar{
     width: 80vw; 
@@ -84,11 +86,17 @@ nav ul li{
     background-color: white;
     
     color: black;
-    margin: 12px 0;
+    margin: 10px 0;
     justify-content: space-between;
     align-items: center;
-    border-radius: 34px;
+    border-radius: 30px;
 }
+
+.songItem:hover {
+    /* CSS properties for button on hover */
+    background-color: white;
+    transform: scale(1.06);
+  }
 
 .songItem img{
     width: 43px;
@@ -113,10 +121,28 @@ nav ul li{
 .songInfo img{
     opacity: 0;
     transition: opacity 0.4s ease-in;
+    transform: translateY(17px);
 }
 
-@media only screen and (max-width: 1100px) {
-    body {
-      background-color: red;
-    }
+.home-button {
+    /* CSS properties for styling the button */
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 34px;
   }
+  
+  .home-button:hover {
+    /* CSS properties for button on hover */
+    background-color: grey;
+    transform: scale(1.1);
+  }
+  
+  .home-button:active {
+    /* CSS properties for button when clicked/pressed */
+    background-color: lightblue;
+  }
+  
