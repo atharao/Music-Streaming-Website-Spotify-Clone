@@ -145,3 +145,31 @@ audioElement.addEventListener('ended', () => {
     pauseSong();
     syncPlayButton();
 });
+           
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+      event.preventDefault(); // Prevent the default space bar behavior (e.g., scrolling)
+      if (audioElement.paused) {
+        audioElement.play();
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+        gif.style.opacity = 1;
+        syncPlayButton();
+      } else {
+        audioElement.pause();
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-play-circle');
+        gif.style.opacity = 0;
+        syncPlayButton();
+      }}
+    else if (event.code === 'ArrowLeft') {
+        // Handle backward action
+        audioElement.currentTime -= 5;} // Go back 5 seconds
+    else if (event.code === 'ArrowRight') {
+        // Handle forward action
+        audioElement.currentTime += 5; // Go forward 5 seconds
+      }
+    }
+  );
+  
+
