@@ -1,4 +1,4 @@
-# Spotify Clone App
+# Music Streaming Website: Spotify Clone 
 
 This is a Spotify clone app built using HTML, CSS, and JavaScript. It aims to replicate some of the core features and user interface of the original Spotify music streaming service.
 
