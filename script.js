@@ -24,7 +24,6 @@ songItems.forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
 });
- 
 
 // Handle play/pause click
 masterPlay.addEventListener('click', () => {
@@ -123,6 +122,18 @@ const playSongAtIndex = (index) => {
     playSong();
 };
 
+// JavaScript to add and remove the "clicked" class when the repeat icon is clicked
+const repeatIcon = document.getElementById('repeat');
+repeatIcon.addEventListener('click', () => {
+    repeatIcon.classList.toggle('clicked');
+    // Toggle repeat functionality
+    if (repeatIcon.classList.contains('clicked')) {
+        audioElement.loop = true; // Enable repeat
+    } else {
+        audioElement.loop = false; // Disable repeat
+    }
+});
+
 document.getElementById('next').addEventListener('click', () => {
     if (songIndex >= songs.length - 1) {
         songIndex = 0;
@@ -145,7 +156,7 @@ audioElement.addEventListener('ended', () => {
     pauseSong();
     syncPlayButton();
 });
-           
+
 document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
       event.preventDefault(); // Prevent the default space bar behavior (e.g., scrolling)
@@ -161,15 +172,12 @@ document.addEventListener('keydown', (event) => {
         masterPlay.classList.add('fa-play-circle');
         gif.style.opacity = 0;
         syncPlayButton();
-      }}
-    else if (event.code === 'ArrowLeft') {
+      }
+    } else if (event.code === 'ArrowLeft') {
         // Handle backward action
-        audioElement.currentTime -= 5;} // Go back 5 seconds
-    else if (event.code === 'ArrowRight') {
+        audioElement.currentTime -= 5; // Go back 5 seconds
+    } else if (event.code === 'ArrowRight') {
         // Handle forward action
         audioElement.currentTime += 5; // Go forward 5 seconds
-      }
     }
-  );
-  
-
+});
