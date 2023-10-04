@@ -64,7 +64,8 @@ nav ul li{
 
 .icons{
     margin-top: 14px;
-    cursor: pointer; 
+    cursor: pointer;
+    margin-left: 350px;
 }
 
 .icons i:active {
@@ -145,4 +146,13 @@ nav ul li{
     /* CSS properties for button when clicked/pressed */
     background-color: lightblue;
   }
-  
+  #repeat {
+    font-size: 2rem; /* Adjust the size as needed */
+    margin-top: 02px; /* Adjust the top margin as needed to position it vertically */
+    margin-left: 300px; /* Adjust the right margin as needed to position it horizontally */
+    transition: color 0.3s ease; /* Smooth color transition */
+    color: rgba(255, 255, 255, 0.5); /* Default color (white with 50% opacity) */
+    cursor: pointer; /* Add a pointer cursor to indicate interactivity */}
+
+    #repeat.clicked {
+        color: white; /* White color when clicked */}
